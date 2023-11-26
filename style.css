@@ -1,3 +1,11 @@
+body {
+  background-color: lightgreen;
+
+  font-family: 'Lora', serif;
+  /* Smoothly transition the background color */
+  transition: background-color .5s;
+}
+
 /* Basic reset for margins and paddings */
 * {
   margin: 0;
@@ -11,13 +19,15 @@ header {
   padding: 20px;
 }
 
-
+main {
+  margin-top: 10px;
+}
 
 img {
   display: inline-block; /* Allow the image to be centered */
   max-width: 25%; /* Ensure the image doesn't exceed the container width */
   height: auto;
-  clip-path: inset(15% 15% 15% 15%);
+  clip-path: inset(15% 15% 20% 15%);
 }
 
 
@@ -31,7 +41,7 @@ img {
 }
 
 .button {
-  display: block;
+  display: flex;
   padding: 10px 20px;
   margin-bottom: 10px;
   text-decoration: none;
@@ -44,4 +54,19 @@ img {
 .button:hover {
   background-color: #2980b9;
   transform: scale(1.05);
+}
+
+/* Media query for smaller screens */
+@media screen and (max-width: 768px) {
+  img {
+    max-width: 90%; /* Adjust the maximum width of the image on smaller screens */
+    height: auto; /* Allow the height to adjust proportionally */
+    clip-path: inset(15% 15% 15% 15%); /* Adjust the cropping for smaller screens */
+  }
+
+  .button {
+    padding: 15px 30px; /* Increase padding for larger buttons */
+    font-size: 18px; /* Increase font size for better readability */
+    margin-bottom: 15px; /* Increase margin between buttons */
+  }
 }
